@@ -1,7 +1,7 @@
 <!--suppress HtmlDeprecatedTag, XmlDeprecatedElement -->
-<center><img alt="mod preview" src=""/></center>
-
 <center>
+<img alt="mod preview" src="https://github.com/user-attachments/assets/ac9edb62-dcb0-48b8-a9b2-874930013630"/>
+
 Classic japes for your friends!
 </center>
 
