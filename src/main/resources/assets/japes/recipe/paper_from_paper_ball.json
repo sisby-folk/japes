@@ -1,0 +1,10 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		"japes:paper_ball"
+	],
+	"result": {
+		"id": "minecraft:paper",
+		"count": 1
+	}
+}

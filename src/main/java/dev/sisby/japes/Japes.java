@@ -10,6 +10,7 @@ public class Japes implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
+		JapesItems.initialize();
 		LOGGER.info("[Japes!] :̶.̶|̶:̶;̶");
 	}
 }
