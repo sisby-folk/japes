@@ -19,8 +19,8 @@ import org.spongepowered.asm.mixin.injection.At;
 public class MixinFoodProperties {
 	@WrapWithCondition(method = "onConsume", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/Level;playSound(Lnet/minecraft/world/entity/Entity;DDDLnet/minecraft/sounds/SoundEvent;Lnet/minecraft/sounds/SoundSource;FF)V"))
 	private boolean applyPaperBallEffects(Level instance, Entity except, double x, double y, double z, SoundEvent sound, SoundSource source, float volume, float pitch, Level level, LivingEntity user, ItemStack stack, Consumable consumable) {
-		if (stack.is(Items.PAPER)) {
-			if (user instanceof Player p) p.getCooldowns().addCooldown(JapesItems.PAPER_BALL.getDefaultInstance(), 20);
+		if (stack.is(Items.PAPER) || stack.is(JapesItems.PAPER_BALL)) {
+			if (user instanceof Player p) p.getCooldowns().addCooldown((stack.is(Items.PAPER) ? JapesItems.PAPER_BALL : Items.PAPER).getDefaultInstance(), 20);
 			return false;
 		}
 		return true;

@@ -4,8 +4,10 @@
 	"package": "dev.sisby.japes.mixin",
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
+		"AccessItemStack",
 		"MixinFoodProperties",
-		"MixinItems"
+		"MixinItems",
+		"MixinUseRemainder"
 	],
 	"client": [
 	],

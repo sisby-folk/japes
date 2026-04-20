@@ -1,3 +1,4 @@
 {
-	"item.japes.paper_ball": "Paper Ball"
+	"item.japes.paper_ball": "Paper Ball",
+	"component.japes.scrumpled_name": "scribbled: '%s...'"
 }

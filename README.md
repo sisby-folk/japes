@@ -1,6 +1,6 @@
 <!--suppress HtmlDeprecatedTag, XmlDeprecatedElement -->
 <center>
-<img alt="mod preview" src="https://github.com/user-attachments/assets/ac9edb62-dcb0-48b8-a9b2-874930013630"/>
+<img alt="mod preview" src="https://cdn.modrinth.com/data/kdqGQMXW/images/59d44b46472a6888a80d8c294fb8a954aaffc4e1.png"/>
 
 Classic japes for your friends!
 </center>
@@ -8,7 +8,10 @@ Classic japes for your friends!
 ---
 
 Adds:
-- The **Paper Ball**, crumpled from paper (can be thrown)
+- The **Paper Ball**
+  - Created by folding (using) paper, and can be unfolded by sneak+using.
+  - Can be thrown by using, drops on contact (players with an empty hand will "catch" it)
+  - Obscures the anvil name of the paper that was folded (can be used to "pass notes")
 
 ---
 
