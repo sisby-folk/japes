@@ -5,6 +5,7 @@
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
 		"AccessItemStack",
+		"MixinEntity",
 		"MixinFoodProperties",
 		"MixinItems",
 		"MixinUseRemainder"
