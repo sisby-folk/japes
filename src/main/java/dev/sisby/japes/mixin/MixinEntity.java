@@ -4,6 +4,7 @@ import dev.sisby.japes.Japes;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -22,7 +23,7 @@ public class MixinEntity {
 	private void tieShoelaces(Player player, InteractionHand hand, Vec3 location, CallbackInfoReturnable<InteractionResult> cir) {
 		if (!((Entity) (Object) this instanceof Player p)) return;
 		if (location.y() < 0.3F && player.isCrouching()) {
-			if (p.getDeltaMovement().lengthSqr() > 10) { // Flat Tire!
+			if (p.getKnownMovement().horizontalDistanceSqr() >= Mth.square(p.getSpeed())) { // Flat Tire!
 				p.addEffect(new MobEffectInstance(MobEffects.SLOWNESS, 100, 1));
 				p.playSound(SoundEvents.BOOK_PUT, 0.5F, 1.0F);
 				p.sendOverlayMessage(Component.translatable("message.japes.flat_tire").withStyle(ChatFormatting.LIGHT_PURPLE));
