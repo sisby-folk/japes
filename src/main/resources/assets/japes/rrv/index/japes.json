@@ -1,0 +1,19 @@
+{
+	"values": [
+		{
+			"after": "japes:paper_ball",
+			"id": "minecraft:lead",
+			"components": {
+				"minecraft:item_name": {
+					"translate": "item.japes.skyhook"
+				},
+				"minecraft:custom_model_data": {
+					"strings": [
+						"skyhook"
+					]
+				},
+				"minecraft:item_model": "japes:skyhook"
+			}
+		}
+	]
+}

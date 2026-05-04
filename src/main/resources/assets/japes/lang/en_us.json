@@ -1,7 +1,10 @@
 {
 	"item.japes.paper_ball": "Paper Ball",
 	"item.japes.taunting_sign": "Taunting Sign",
+	"item.japes.skyhook": "Skyhook",
+	"lore.japes.skyhook": "Attaches blocks and entities to the sky for easy lifting.",
 	"component.japes.scrumpled_name": "scribbled: '%s...'",
 	"message.japes.lost_the_game": "You just lost the game",
-	"message.japes.shoelaces_tied": "Your shoelaces have been tied!"
+	"message.japes.shoelaces_tied": "Your shoelaces have been tied!",
+	"creativeTab.japes": "Japes!"
 }

@@ -1,0 +1,19 @@
+{
+	"type": "rrv:world_interaction",
+	"left": "minecraft:lead",
+	"right": "minecraft:wind_charge",
+	"result": {
+		"id": "minecraft:lead",
+		"components": {
+			"minecraft:item_name": {
+				"translate": "item.japes.skyhook"
+			},
+			"minecraft:custom_model_data": {
+				"strings": [
+					"skyhook"
+				]
+			},
+			"minecraft:item_model": "japes:skyhook"
+		}
+	}
+}

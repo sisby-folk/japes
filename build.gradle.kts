@@ -45,7 +45,8 @@ tasks.processResources {
 		"members" to "$authors${if (contributors.isEmpty()) "" else ". Contributions by $contributors."}",
 		"minecraftVersion" to compatibleVersions.split(", ")[0],
 		"fabricLoaderVersion" to libs.versions.fabric.loader,
-		"fabricApiVersion" to libs.versions.fabric.api
+		"fabricApiVersion" to libs.versions.fabric.api,
+		"trinketsVersion" to libs.versions.trinkets
 	)
 
 	inputs.properties(meta)

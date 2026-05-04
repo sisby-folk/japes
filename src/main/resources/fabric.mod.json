@@ -23,7 +23,8 @@
 	"depends": {
 		"minecraft": ">=${minecraftVersion}",
 		"fabricloader": ">=${fabricLoaderVersion}",
-		"fabric-api": ">=${fabricApiVersion}"
+		"fabric-api": ">=${fabricApiVersion}",
+		"trinkets_updated": ">=${trinketsVersion}"
 	},
 	"suggests": {
 	},

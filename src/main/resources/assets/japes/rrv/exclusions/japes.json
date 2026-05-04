@@ -1,0 +1,8 @@
+{
+	"type": "rrv:exclusions",
+	"minecraft:crafting": [
+		"minecraft:lead"
+	],
+	"item": [],
+	"block": []
+}
