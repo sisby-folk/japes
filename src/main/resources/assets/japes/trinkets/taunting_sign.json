@@ -1,0 +1,23 @@
+{
+	"target": [
+		"japes:taunting_sign"
+	],
+	"render": [
+		{
+			"type": "item",
+			"model_part": "body",
+			"transformation": {
+				"translation": [0, 0.1, -0.2],
+				"left_rotation": {
+					"axis": [0, 1, 0],
+					"angle": 3.141
+				},
+				"scale": [0.4, 0.4, 0.4],
+				"right_rotation": {
+					"axis": [0, 1, 0],
+					"angle": 0
+				}
+			}
+		}
+	]
+}

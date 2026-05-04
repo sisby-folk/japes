@@ -18,8 +18,8 @@ public class JapesClient implements ClientModInitializer {
 	@Override
 	public void onInitializeClient() {
 		EntityRenderers.register(JapesEntityTypes.PAPER_BALL, ThrownItemRenderer::new);
-		ClientReceiveMessageEvents.CHAT.register(((message, playerChatMessage, _, _, _) -> {
-			if (GAME_PATTERN.matcher(playerChatMessage.decoratedContent().getString().toLowerCase(Locale.ROOT)).find()) {
+		ClientReceiveMessageEvents.CHAT.register(((_, playerChatMessage, _, _, _) -> {
+			if (playerChatMessage != null && GAME_PATTERN.matcher(playerChatMessage.decoratedContent().getString().toLowerCase(Locale.ROOT)).find()) {
 				Minecraft.getInstance().getChatListener().handleOverlay(Component.translatable("message.japes.lost_the_game").withStyle(ChatFormatting.LIGHT_PURPLE));
 			}
 		}));

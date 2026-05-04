@@ -1,5 +1,6 @@
 {
 	"item.japes.paper_ball": "Paper Ball",
+	"item.japes.taunting_sign": "Taunting Sign",
 	"component.japes.scrumpled_name": "scribbled: '%s...'",
 	"message.japes.lost_the_game": "You just lost the game",
 	"message.japes.shoelaces_tied": "Your shoelaces have been tied!"

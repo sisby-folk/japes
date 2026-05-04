@@ -11,9 +11,14 @@ val compatibleVersions: String by project
 
 version = "$modVersion+$branchName"
 
+repositories {
+	maven("https://maven.nucleoid.xyz/releases")
+}
+
 dependencies {
 	minecraft(libs.minecraft)
 	api(libs.bundles.fabric)
+	implementation(libs.trinkets)
 }
 
 java {
@@ -91,6 +96,11 @@ publishMods {
 		requires {
 			slug = "fabric-api"
 			version = libs.versions.fabric.api
+		}
+
+		requires {
+			slug = "trinkets-updated"
+			version = libs.versions.trinkets
 		}
 	}
 }

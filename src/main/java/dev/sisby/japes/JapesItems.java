@@ -1,6 +1,7 @@
 package dev.sisby.japes;
 
 import dev.sisby.japes.item.PaperBallItem;
+import dev.sisby.japes.item.TauntingSignItem;
 import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
 import net.minecraft.core.Registry;
 import net.minecraft.core.component.DataComponents;
@@ -27,6 +28,8 @@ public class JapesItems {
 		.component(DataComponents.USE_EFFECTS, new UseEffects(true, false, 0.8F))
 	);
 
+	public static final TauntingSignItem TAUNTING_SIGN = register("taunting_sign", TauntingSignItem::new, new Item.Properties().stacksTo(1));
+
 	public static <T extends Item> T register(String name, Function<Item.Properties, T> itemFactory, Item.Properties settings) {
 		ResourceKey<Item> itemKey = ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(Japes.ID, name));
 		T item = itemFactory.apply(settings.setId(itemKey));
@@ -35,7 +38,6 @@ public class JapesItems {
 	}
 
 	public static void initialize() {
-
 		CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.COMBAT).register(tab -> tab.insertBefore(Items.SNOWBALL, PAPER_BALL));
 	}
 }
