@@ -4,8 +4,6 @@ import eu.pb4.trinkets.api.TrinketAttachment;
 import eu.pb4.trinkets.api.TrinketSlotAccess;
 import eu.pb4.trinkets.api.TrinketsApi;
 import eu.pb4.trinkets.api.callback.TrinketCallback;
-import eu.pb4.trinkets.api.component.TrinketDataComponents;
-import eu.pb4.trinkets.api.component.TrinketEquippable;
 import eu.pb4.trinkets.impl.TrinketSlot;
 import net.minecraft.core.Holder;
 import net.minecraft.resources.Identifier;
@@ -34,18 +32,14 @@ public class TauntingSignItem extends Item implements TrinketCallback {
 
 	@Override
 	public @NonNull InteractionResult interactLivingEntity(@NonNull ItemStack stack, @NonNull Player player, @NonNull LivingEntity target, @NonNull InteractionHand type) {
-		TrinketEquippable equipment = stack.get(TrinketDataComponents.EQUIPMENT);
-		if (equipment != null && equipment.canBeEquippedBy(target)) { // equip on others
-			int count = stack.count();
-			TrinketAttachment attachment = TrinketsApi.getAttachment(target);
-			attachment.forEach(slot -> {
-				if (count == stack.count() && slot.get().isEmpty() && TrinketSlot.canInsert(stack, slot, target)) {
-					slot.set(stack.split(1));
-				}
-			});
-			if (count != stack.count()) return InteractionResult.SUCCESS.heldItemTransformedTo(stack);
-		}
-
+		int count = stack.count();
+		TrinketAttachment attachment = TrinketsApi.getAttachment(target);
+		attachment.forEach(slot -> {
+			if (count == stack.count() && slot.get().isEmpty() && TrinketSlot.canInsert(stack, slot, target)) {
+				slot.set(stack.split(1));
+			}
+		});
+		if (count != stack.count()) return InteractionResult.SUCCESS.heldItemTransformedTo(stack);
 		return super.interactLivingEntity(stack, player, target, type);
 	}
 }
