@@ -19,13 +19,14 @@ public class MixinServerPlayer {
 	private void checkShoelaces(CallbackInfo ci) {
 		ServerPlayer self = (ServerPlayer) (Object) this;
 		if (Boolean.TRUE.equals(self.getAttached(Japes.SHOELACES_TIED))) {
-			if (self.isSprinting()) {
-				self.addEffect(new MobEffectInstance(MobEffects.SLOWNESS, 200));
+			if (self.isSprinting() && !self.hasEffect(MobEffects.SLOWNESS)) {
+				self.addEffect(new MobEffectInstance(MobEffects.SLOWNESS, 200, 2));
 				self.playSound(SoundEvents.BOOK_PUT, 0.5F, 1.0F);
 				self.sendOverlayMessage(Component.translatable("message.japes.shoelaces_tied").withStyle(ChatFormatting.LIGHT_PURPLE));
 			} else if (self.getKnownMovement().horizontalDistanceSqr() < Mth.square(self.getSpeed()) && self.getXRot() > 89.0F) { // Untie Shoelaces
 				self.sendOverlayMessage(Component.translatable("message.japes.shoelaces_untied").withStyle(ChatFormatting.AQUA));
 				self.playSound(SoundEvents.UI_CARTOGRAPHY_TABLE_TAKE_RESULT, 0.5F, 0.5F);
+				self.removeEffect(MobEffects.SLOWNESS);
 				self.removeAttached(Japes.SHOELACES_TIED);
 			}
 		}

@@ -23,7 +23,7 @@ public class MixinEntity {
 		if (!((Entity) (Object) this instanceof Player p)) return;
 		if (location.y() < 0.3F && player.isCrouching()) {
 			if (p.getDeltaMovement().lengthSqr() > 10) { // Flat Tire!
-				p.addEffect(new MobEffectInstance(MobEffects.SLOWNESS, 100));
+				p.addEffect(new MobEffectInstance(MobEffects.SLOWNESS, 100, 1));
 				p.playSound(SoundEvents.BOOK_PUT, 0.5F, 1.0F);
 				p.sendOverlayMessage(Component.translatable("message.japes.flat_tire").withStyle(ChatFormatting.LIGHT_PURPLE));
 			} else { // Shoelaces Tied!
