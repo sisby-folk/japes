@@ -18,6 +18,7 @@ public class Japes implements ModInitializer {
 	public void onInitialize() {
 		JapesComponents.initialize();
 		JapesEntityTypes.initialize();
+		JapesBlocks.initialize();
 		JapesItems.initialize();
 		LOGGER.info("[Japes!] :̶.̶|̶:̶;̶");
 	}

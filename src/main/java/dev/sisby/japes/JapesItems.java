@@ -51,6 +51,7 @@ public class JapesItems {
 		.icon(() -> TAUNTING_SIGN.getDefaultInstance().copy())
 		.title(Component.translatable("creativeTab.japes"))
 		.displayItems((_, output) -> {
+			output.accept(JapesBlocks.BUGGY.asItem());
 			output.accept(PAPER_BALL);
 			output.accept(TAUNTING_SIGN);
 			ItemStack skyhook = Items.LEAD.getDefaultInstance().copy();
