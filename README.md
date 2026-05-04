@@ -1,6 +1,6 @@
 <!--suppress HtmlDeprecatedTag, XmlDeprecatedElement -->
 <center>
-<img alt="mod preview" src="https://cdn.modrinth.com/data/kdqGQMXW/images/59d44b46472a6888a80d8c294fb8a954aaffc4e1.png"/>
+<img alt="mod preview" src="https://cdn.modrinth.com/data/kdqGQMXW/images/9b94a580286414a56fa3bbad253f3cf01adc6b3e.png"/>
 
 Classic japes for your friends!
 </center>
@@ -12,6 +12,11 @@ Adds:
   - Created by folding (using) paper, and can be unfolded by sneak+using.
   - Can be thrown by using, drops on contact (players with an empty hand will "catch" it)
   - Obscures the anvil name of the paper that was folded (can be used to "pass notes")
+- **Buggy** - Interact with this block while other players are nearby to briefly gain a combat advantage!
+- **Taunting Sign** - Rename paper "kick me" to obtain this sign! Can be equipped on others, negates armor.
+- **Shoelace Tying** - Sneak-interact with someone's feet to unheel their shoe or tie their laces. Disarm by looking down.
+- **Skyhook** - An extremely useful item that is definitely crafted by leashing a wind charge. Definitely.
+- **The Game** - Lets you know when you've losed the game due to a chat message.
 
 ---
 
