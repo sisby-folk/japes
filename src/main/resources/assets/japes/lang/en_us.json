@@ -5,6 +5,8 @@
 	"lore.japes.skyhook": "Attaches blocks and entities to the sky for easy lifting.",
 	"component.japes.scrumpled_name": "scribbled: '%s...'",
 	"message.japes.lost_the_game": "You just lost the game",
-	"message.japes.shoelaces_tied": "Your shoelaces have been tied!",
+	"message.japes.shoelaces_tied": "Your shoelaces were tied!",
+	"message.japes.shoelaces_untied": "You untie your shoelaces...",
+	"message.japes.flat_tire": "Flat tire!",
 	"creativeTab.japes": "Japes!"
 }

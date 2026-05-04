@@ -1,5 +1,7 @@
 package dev.sisby.japes.mixin;
 
+import dev.sisby.japes.Japes;
+import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.InteractionHand;
@@ -20,9 +22,14 @@ public class MixinEntity {
 	private void tieShoelaces(Player player, InteractionHand hand, Vec3 location, CallbackInfoReturnable<InteractionResult> cir) {
 		if (!((Entity) (Object) this instanceof Player p)) return;
 		if (location.y() < 0.3F && player.isCrouching()) {
-			p.addEffect(new MobEffectInstance(MobEffects.SLOWNESS, 100));
-			p.playSound(SoundEvents.UI_CARTOGRAPHY_TABLE_TAKE_RESULT, 0.5F, 0.5F);
-			p.sendOverlayMessage(Component.translatable("message.japes.shoelaces_tied"));
+			if (p.getDeltaMovement().lengthSqr() > 10) { // Flat Tire!
+				p.addEffect(new MobEffectInstance(MobEffects.SLOWNESS, 100));
+				p.playSound(SoundEvents.BOOK_PUT, 0.5F, 1.0F);
+				p.sendOverlayMessage(Component.translatable("message.japes.flat_tire").withStyle(ChatFormatting.LIGHT_PURPLE));
+			} else { // Shoelaces Tied!
+				p.playSound(SoundEvents.UI_CARTOGRAPHY_TABLE_TAKE_RESULT, 0.5F, 0.5F);
+				p.setAttached(Japes.SHOELACES_TIED, true);
+			}
 			cir.setReturnValue(InteractionResult.SUCCESS);
 		}
 	}
