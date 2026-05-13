@@ -6,7 +6,6 @@ import net.fabricmc.fabric.api.attachment.v1.AttachmentRegistry;
 import net.fabricmc.fabric.api.attachment.v1.AttachmentType;
 import net.fabricmc.fabric.api.message.v1.ServerMessageEvents;
 import net.minecraft.ChatFormatting;
-import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
 import org.slf4j.Logger;
@@ -28,9 +27,9 @@ public class Japes implements ModInitializer {
 		JapesEntityTypes.initialize();
 		JapesBlocks.initialize();
 		JapesItems.initialize();
-		ServerMessageEvents.CHAT_MESSAGE.register((message, _, _) -> {
+		ServerMessageEvents.CHAT_MESSAGE.register((message, player, _) -> {
 			if (GAME_PATTERN.matcher(message.signedContent().toLowerCase(Locale.ROOT)).find()) {
-				Minecraft.getInstance().getChatListener().handleOverlay(Component.translatable("message.japes.lost_the_game").withStyle(ChatFormatting.LIGHT_PURPLE));
+				player.createCommandSourceStack().getServer().getPlayerList().broadcastSystemMessage(Component.translatable("message.japes.lost_the_game").withStyle(ChatFormatting.LIGHT_PURPLE), true);
 			}
 		});
 		LOGGER.info("[Japes!] :̶.̶|̶:̶;̶");
